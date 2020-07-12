@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     userInfo: {
+        marginTop: 30,
         flex: 0.6,
         justifyContent: 'center'
     },

@@ -2,15 +2,17 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     imageArea: {
-        flex: 0.6,
+        flex: 1,
         flexDirection: 'row',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         alignItems: 'center'
     },
 
     image: {
-        width: 150,
-        height: 150
+        marginTop: 20,
+        borderRadius: 10,
+        width: 200,
+        height: 200
     }
 })
 
