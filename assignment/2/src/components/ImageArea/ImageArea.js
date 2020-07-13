@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, ScrollView } from 'react-native';
+import { View, Image, ScrollView, Text } from 'react-native';
 import styles from './styles'
 
 export default function ImageArea() {
@@ -17,17 +17,20 @@ export default function ImageArea() {
     const centerImgData = Math.floor(imgData.length / 2)
 
     return (
-        <ScrollView contentContainerStyle={styles.imageArea}>
-            <View>
-                {imgData.slice(0, centerImgData).map(item => {
-                    return <Image source={item.imgSource} style={styles.image} key={item.id} />
-                })}
-            </View>
-            <View >
-                {imgData.slice(centerImgData).map(item => {
-                    return <Image source={item.imgSource} style={styles.image} key={item.id} />
-                })}
-            </View>
-        </ScrollView>
+        <View style={{ flex: 1 }}>
+            <ScrollView contentContainerStyle={styles.imageArea}>
+                <View style={{ flexDirection: 'column' }}>
+                    {imgData.slice(0, centerImgData).map(item => {
+                        return <Image source={item.imgSource} style={styles.image} key={item.id} />
+                    })}
+                </View>
+                <View style={{ flexDirection: 'column' }}>
+                    {imgData.slice(centerImgData).map(item => {
+                        return <Image source={item.imgSource} style={styles.image} key={item.id} />
+                    })}
+                </View>
+            </ScrollView>
+        </View>
+
     )
 }
