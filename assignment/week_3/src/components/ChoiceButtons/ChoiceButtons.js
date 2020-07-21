@@ -4,17 +4,12 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import CHOICES from './choices'
 
 const ChoiceButtons = (props) => {
-
-    const onButtonClick = () => {
-        alert('Clicked')
-    }
-
     return (
         <View style={styles.choiceButtons}>
             {
                 CHOICES.map(choice => {
                     return (
-                        <TouchableOpacity style={styles.buttonStyle} key={choice.name} onPress={onButtonClick}>
+                        <TouchableOpacity style={styles.buttonStyle} key={choice.name} onPress={()=> props.onChoicePress(choice.name)}>
                             <Text style={styles.buttonText}>{choice.name}</Text>
                         </TouchableOpacity>
                     )
@@ -27,6 +22,8 @@ const ChoiceButtons = (props) => {
 const styles = StyleSheet.create({
     choiceButtons: {
         flex: 0.3,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     buttonStyle: {
         width: 200,
